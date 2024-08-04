@@ -13,11 +13,11 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'message' => 'required',
-        ]);
+        // $request->validate([
+        //     'name' => 'required',
+        //     'email' => 'required|email',
+        //     'message' => 'required',
+        // ]);
 
         $contact = new Contact();
         $contact->first_name = $request->first_name;
@@ -25,7 +25,6 @@ class ContactController extends Controller
         $contact->email = $request->email;
         $contact->phone = $request->phone;
         $contact->save();
-
-        return back()->with('success', 'Thanks for contacting us!');
+        return redirect('create')->with('success', 'Contact saved!');
     }
 }
