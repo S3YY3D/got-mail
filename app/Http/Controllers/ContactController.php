@@ -6,18 +6,18 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    public function create()
+    public function show()
     {
         return view('contact');
     }
 
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'name' => 'required',
-        //     'email' => 'required|email',
-        //     'message' => 'required',
-        // ]);
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+        ]);
 
         $contact = new Contact();
         $contact->first_name = $request->first_name;
