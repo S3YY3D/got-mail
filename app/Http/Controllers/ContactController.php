@@ -13,18 +13,20 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
+        $validatedData =$request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
             'email' => 'required|email',
-            'message' => 'required',
+            'phone' => 'required',
         ]);
-
         $contact = new Contact();
-        $contact->first_name = $request->first_name;
-        $contact->last_name = $request->last_name;
-        $contact->email = $request->email;
-        $contact->phone = $request->phone;
-        $contact->save();
-        return redirect('create')->with('success', 'Contact saved!');
+        $contact->first_name = $validatedData['first_name'];
+        $contact->last_name = $validatedData['last_name'];
+        $contact->email = $validatedData['email'];
+        $contact->phone = $validatedData['phone'];
+        $contact->save();   
+        dd($contact);
+        return "info saved succesfully!";
     }
+
 }

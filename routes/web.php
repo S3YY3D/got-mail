@@ -3,10 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 
-Route::get('/', function () {
-    return view('contact');
-});
+Route::get('/', [ContactController::class, 'show']);
 
-Route::get('show-form', [ContactController::class, 'show']);
-
-Route::post('store-form', [ContactController::class, 'store']);
+Route::post('/store_form', [ContactController::class,'store'])->name('store_form');
