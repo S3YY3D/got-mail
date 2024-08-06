@@ -25,7 +25,6 @@ class ContactController extends Controller
         $contact->email = $validatedData['email'];
         $contact->phone = $validatedData['phone'];
         $contact->save();   
-        dd($contact);
         return "info saved succesfully!";
     }
 
