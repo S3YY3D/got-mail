@@ -19,8 +19,8 @@ class ContactController extends Controller
         event(new UserRegistration($name));
         
         $validatedData =$request->validate([
-            'first_name' => 'required',
-            'last_name' => '',
+            'first_name' => '',
+            'last_name' => 'nullable',
             'email' => 'required|email',
             'phone' => '',
         ]);

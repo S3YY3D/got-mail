@@ -12,13 +12,13 @@
         <input type="text" id="first_name" name="first_name" required><br><br>
         
         <label for="last_name">نام خانوادگی:</label>
-        <input type="text" id="last_name" name="last_name" required><br><br>
+        <input type="text" id="last_name" name="last_name" ><br><br>
         
         <label for="email">ایمیل:</label>
         <input type="email" id="email" name="email" required><br><br>
         
         <label for="phone">شماره همراه:</label>
-        <input type="tel" id="phone" name="phone" required><br><br>
+        <input type="tel" id="phone" name="phone" ><br><br>
 
         <button type="submit" class="btn btn-primary">ارسال</button>
     </form>
